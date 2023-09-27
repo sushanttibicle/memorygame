@@ -1,121 +1,303 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="index.css" />
     <title>Memory game</title>
-</head>
-<body>
-    
-   <div class="main">
-   <div class="header">
-    <button class="btn" id="start">Start</button>
-    <span style="display: flex;"><button style="background-color: transparent; border: none; color: white; font-size: 22px;font-weight: bold;">moves: </button> <button style="background-color: transparent; border: none; color: white; font-size: 22px;font-weight: bold;" id="moves">0</button></span>
-   
-    <span style="display: flex;"><button style="background-color: transparent; border: none; color: white; font-size: 22px;font-weight: bold;">time: </button> <button style="background-color: transparent; border: none; color: white; font-size: 22px;font-weight: bold;" id="time">0</button></span>
-   
-</div>
-     <div id="container" class="centerbox">
-        <div class="box" id="box1"><img src="./images/one.jpg" class="img" alt="memorygame image" width="100px" height="100px" style="border-radius: 8px;"></div>
-        <div class="box" id="box2"><img src="./images/five.jpg" class="img" alt="memorygame image" width="100px" height="100px" style="border-radius: 8px;"></div>
-        <div class="box" id="box3"><img src="./images/three.jpg" class="img" alt="memorygame image" width="100px" height="100px" style="border-radius: 8px;"></div>
-        <div class="box" id="box4"><img src="./images/seven.jpg" class="img" alt="memorygame image" width="100px" height="100px" style="border-radius: 8px;"></div>
-        <div class="box" id="box5"><img src="./images/thirteen.jpg" class="img" alt="memorygame image" width="100px" height="100px" style="border-radius: 8px;"></div>
-        <div class="box" id="box6"><img src="./images/six.jpg" class="img" alt="memorygame image" width="100px" height="100px" style="border-radius: 8px;"></div>
-        <div class="box" id="box7"><img src="./images/four.jpg" class="img" alt="memorygame image" width="100px" height="100px" style="border-radius: 8px;"></div>
-        <div class="box" id="box8"><img src="./images/eight.jpg" class="img" alt="memorygame image" width="100px" height="100px" style="border-radius: 8px;"></div>
-        <div class="box" id="box9"><img src="./images/nine.jpg" class="img" alt="memorygame image" width="100px" height="100px" style="border-radius: 8px;"></div>
-        <div class="box" id="box10"><img src="./images/ten.jpg" class="img" alt="memorygame image" width="100px" height="100px" style="border-radius: 8px;"></div>
-        <div class="box" id="box11"><img src="./images/seven.jpg" class="img" alt="memorygame image" width="100px" height="100px" style="border-radius: 8px;"></div>
-        <div class="box" id="box12"><img src="./images/twelve.jpg" class="img" alt="memorygame image" width="100px" height="100px" style="border-radius: 8px;"></div>
-        <div class="box" id="box13"><img src="./images/fourteen.jpg" class="img" alt="memorygame image" width="100px" height="100px" style="border-radius: 8px;"></div>
-        <div class="box" id="box14"><img src="./images/two.jpg" class="img" alt="memorygame image" width="100px" height="100px" style="border-radius: 8px;"></div>
-        <div class="box" id="box15"><img src="./images/eleven.jpg" class="img" alt="memorygame image" width="100px" height="100px" style="border-radius: 8px;"></div>
-        <div class="box" id="box16"><img src="./images/thirteen.jpg" class="img" alt="memorygame image" width="100px" height="100px" style="border-radius: 8px;"></div>
-     </div>
+  </head>
+  <body>
+    <div class="main">
+      <div class="header">
+        <button class="btn" id="start">Start</button>
+        <span style="display: flex"
+          ><button
+            style="
+              background-color: transparent;
+              border: none;
+              color: white;
+              font-size: 22px;
+              font-weight: bold;
+            "
+          >
+            moves:
+          </button>
+          <button
+            style="
+              background-color: transparent;
+              border: none;
+              color: white;
+              font-size: 22px;
+              font-weight: bold;
+            "
+            id="moves"
+          >
+            0
+          </button></span
+        >
+
+        <span style="display: flex"
+          ><button
+            style="
+              background-color: transparent;
+              border: none;
+              color: white;
+              font-size: 22px;
+              font-weight: bold;
+            "
+          >
+            time:
+          </button>
+          <button
+            style="
+              background-color: transparent;
+              border: none;
+              color: white;
+              font-size: 22px;
+              font-weight: bold;
+            "
+            id="time"
+          >
+            0
+          </button></span
+        >
+      </div>
+      <div id="container" class="centerbox">
+        <div class="box" id="box1">
+          <img
+            src="./images/one.jpg"
+            class="img"
+            alt="memorygame image"
+            width="100px"
+            height="100px"
+            style="border-radius: 8px"
+          />
+        </div>
+        <div class="box" id="box2">
+          <img
+            src="./images/five.jpg"
+            class="img"
+            alt="memorygame image"
+            width="100px"
+            height="100px"
+            style="border-radius: 8px"
+          />
+        </div>
+        <div class="box" id="box3">
+          <img
+            src="./images/three.jpg"
+            class="img"
+            alt="memorygame image"
+            width="100px"
+            height="100px"
+            style="border-radius: 8px"
+          />
+        </div>
+        <div class="box" id="box4">
+          <img
+            src="./images/seven.jpg"
+            class="img"
+            alt="memorygame image"
+            width="100px"
+            height="100px"
+            style="border-radius: 8px"
+          />
+        </div>
+        <div class="box" id="box5">
+          <img
+            src="./images/thirteen.jpg"
+            class="img"
+            alt="memorygame image"
+            width="100px"
+            height="100px"
+            style="border-radius: 8px"
+          />
+        </div>
+        <div class="box" id="box6">
+          <img
+            src="./images/six.jpg"
+            class="img"
+            alt="memorygame image"
+            width="100px"
+            height="100px"
+            style="border-radius: 8px"
+          />
+        </div>
+        <div class="box" id="box7">
+          <img
+            src="./images/four.jpg"
+            class="img"
+            alt="memorygame image"
+            width="100px"
+            height="100px"
+            style="border-radius: 8px"
+          />
+        </div>
+        <div class="box" id="box8">
+          <img
+            src="./images/eight.jpg"
+            class="img"
+            alt="memorygame image"
+            width="100px"
+            height="100px"
+            style="border-radius: 8px"
+          />
+        </div>
+        <div class="box" id="box9">
+          <img
+            src="./images/nine.jpg"
+            class="img"
+            alt="memorygame image"
+            width="100px"
+            height="100px"
+            style="border-radius: 8px"
+          />
+        </div>
+        <div class="box" id="box10">
+          <img
+            src="./images/ten.jpg"
+            class="img"
+            alt="memorygame image"
+            width="100px"
+            height="100px"
+            style="border-radius: 8px"
+          />
+        </div>
+        <div class="box" id="box11">
+          <img
+            src="./images/seven.jpg"
+            class="img"
+            alt="memorygame image"
+            width="100px"
+            height="100px"
+            style="border-radius: 8px"
+          />
+        </div>
+        <div class="box" id="box12">
+          <img
+            src="./images/twelve.jpg"
+            class="img"
+            alt="memorygame image"
+            width="100px"
+            height="100px"
+            style="border-radius: 8px"
+          />
+        </div>
+        <div class="box" id="box13">
+          <img
+            src="./images/fourteen.jpg"
+            class="img"
+            alt="memorygame image"
+            width="100px"
+            height="100px"
+            style="border-radius: 8px"
+          />
+        </div>
+        <div class="box" id="box14">
+          <img
+            src="./images/two.jpg"
+            class="img"
+            alt="memorygame image"
+            width="100px"
+            height="100px"
+            style="border-radius: 8px"
+          />
+        </div>
+        <div class="box" id="box15">
+          <img
+            src="./images/eleven.jpg"
+            class="img"
+            alt="memorygame image"
+            width="100px"
+            height="100px"
+            style="border-radius: 8px"
+          />
+        </div>
+        <div class="box" id="box16">
+          <img
+            src="./images/thirteen.jpg"
+            class="img"
+            alt="memorygame image"
+            width="100px"
+            height="100px"
+            style="border-radius: 8px"
+          />
+        </div>
+      </div>
     </div>
-    
-</body>
+  </body>
 </html>
 <script>
-      //to hide all images in onego
-      const images=document.querySelectorAll('.img')
-images.forEach(function(image) {
-        image.style.display = 'none';
-      });
-    var showtime=10;
+  //to hide all images in onego
+  const images = document.querySelectorAll(".img");
+  images.forEach(function (image) {
+    image.style.display = "none";
+  });
+  var showtime = 10;
 
-    var hideid;
+  var hideid;
 
-    function startshow(){
-        var handler1 = function() {
-    if(showtime<=0){
-    clearInterval(hideid);
-    //to hide all images in onego
-    const images=document.querySelectorAll('.img')
-images.forEach(function(image) {
-        image.style.display = 'none';
-      });
-    alert("over")
-}else{
-    showtime--
-    console.log(showtime)
-}
-}
-hideid= setInterval(handler1, 1000);
-        handler1();
+  function startshow() {
+    var handler1 = function () {
+      if (showtime <= 0) {
+        clearInterval(hideid);
+        //to hide all images in onego
+        const images = document.querySelectorAll(".img");
+        images.forEach(function (image) {
+          image.style.display = "none";
+        });
+        alert("over");
+      } else {
+        showtime--;
+        console.log(showtime);
+      }
+    };
+    hideid = setInterval(handler1, 1000);
+    handler1();
+  }
 
+  function showimages() {
+    //to show all images in onego
+    const images = document.querySelectorAll(".img");
+    images.forEach(function (image) {
+      image.style.display = "block";
+    });
+  }
+
+  //when user click on start timer starts
+  let start = document.getElementById("start");
+  var id;
+  var time = 59;
+  var handler = function () {
+    if (time < 0) {
+      clearInterval(id);
+      alert("Game over");
+    } else {
+      document.getElementById("time").textContent = time--;
     }
- 
-    function showimages(){
-         //to show all images in onego
-      const images=document.querySelectorAll('.img')
-images.forEach(function(image) {
-        image.style.display = 'block';
-      });
+  };
+
+  start.addEventListener("click", () => {
+    id = setInterval(handler, 1000);
+    handler();
+    start.disabled = true;
+    start.innerText = "Stop";
+
+    if (showtime >= 0) {
+      showimages();
     }
-   
-
-//when user click on start timer starts
-let start=document.getElementById('start')
-   var id;
-  var time=59;
-var handler = function() {
-    if(time<0){
-    clearInterval(id);
-    alert("Game over")
-}else{
-   
-    document.getElementById("time").textContent = (time--);
-}
-
-};
-
-start.addEventListener('click',()=>{
-   id= setInterval(handler, 1000);
-        handler();
-        start.disabled = true;
-        start.innerText="Stop"
-        
-        if(showtime>=0){
-        showimages()
-    }
-        startshow()
-    
-    }) 
-
-
-let count = 0;
-
-// Add a click event listener to each box
-for (let i = 1; i <=16; i++) {
-  const box = document.getElementById(`box${i}`);
-  box.addEventListener('click', () => {
-    count++; // Increase the count
-    document.getElementById('moves').innerText=`${count}`
-     console.log(`Box ID: ${box.id}` );
+    startshow();
   });
 
-}
+  let count = 0;
+
+  // Add a click event listener to each box
+  for (let i = 1; i <= 16; i++) {
+    const box = document.getElementById(`box${i}`);
+    box.addEventListener("click", () => {
+      count++; // Increase the count
+      document.getElementById("moves").innerText = `${count}`;
+      console.log(`Box ID: ${box.id}`);
+    });
+  }
 </script>
