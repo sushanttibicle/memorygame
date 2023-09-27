@@ -39,9 +39,17 @@
 </body>
 </html>
 <script>
+      //to hide all images in onego
+      const images=document.querySelectorAll('.img')
+images.forEach(function(image) {
+        image.style.display = 'none';
+      });
     var showtime=10;
+
     var hideid;
-    var handler1 = function() {
+
+    function startshow(){
+        var handler1 = function() {
     if(showtime<=0){
     clearInterval(hideid);
     //to hide all images in onego
@@ -58,6 +66,16 @@ images.forEach(function(image) {
 hideid= setInterval(handler1, 1000);
         handler1();
 
+    }
+ 
+    function showimages(){
+         //to show all images in onego
+      const images=document.querySelectorAll('.img')
+images.forEach(function(image) {
+        image.style.display = 'block';
+      });
+    }
+   
 
 //when user click on start timer starts
 let start=document.getElementById('start')
@@ -68,14 +86,23 @@ var handler = function() {
     clearInterval(id);
     alert("Game over")
 }else{
+   
     document.getElementById("time").textContent = (time--);
-}};
+}
+
+};
 
 start.addEventListener('click',()=>{
    id= setInterval(handler, 1000);
         handler();
         start.disabled = true;
         start.innerText="Stop"
+        
+        if(showtime>=0){
+        showimages()
+    }
+        startshow()
+    
     }) 
 
 
