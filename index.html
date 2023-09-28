@@ -67,6 +67,7 @@
           <img
             src="./images/one.jpg"
             class="img"
+            id="1"
             alt="memorygame image"
             width="100px"
             height="100px"
@@ -77,6 +78,7 @@
           <img
             src="./images/five.jpg"
             class="img"
+            id="2"
             alt="memorygame image"
             width="100px"
             height="100px"
@@ -87,6 +89,7 @@
           <img
             src="./images/three.jpg"
             class="img"
+            id="3"
             alt="memorygame image"
             width="100px"
             height="100px"
@@ -97,6 +100,7 @@
           <img
             src="./images/seven.jpg"
             class="img"
+            id="4"
             alt="memorygame image"
             width="100px"
             height="100px"
@@ -107,6 +111,7 @@
           <img
             src="./images/thirteen.jpg"
             class="img"
+            id="5"
             alt="memorygame image"
             width="100px"
             height="100px"
@@ -117,6 +122,7 @@
           <img
             src="./images/six.jpg"
             class="img"
+            id="6"
             alt="memorygame image"
             width="100px"
             height="100px"
@@ -127,6 +133,7 @@
           <img
             src="./images/four.jpg"
             class="img"
+            id="7"
             alt="memorygame image"
             width="100px"
             height="100px"
@@ -137,6 +144,7 @@
           <img
             src="./images/eight.jpg"
             class="img"
+            id="8"
             alt="memorygame image"
             width="100px"
             height="100px"
@@ -147,6 +155,7 @@
           <img
             src="./images/nine.jpg"
             class="img"
+            id="9"
             alt="memorygame image"
             width="100px"
             height="100px"
@@ -157,6 +166,7 @@
           <img
             src="./images/ten.jpg"
             class="img"
+            id="10"
             alt="memorygame image"
             width="100px"
             height="100px"
@@ -167,6 +177,7 @@
           <img
             src="./images/seven.jpg"
             class="img"
+            id="11"
             alt="memorygame image"
             width="100px"
             height="100px"
@@ -177,6 +188,7 @@
           <img
             src="./images/twelve.jpg"
             class="img"
+            id="12"
             alt="memorygame image"
             width="100px"
             height="100px"
@@ -187,6 +199,7 @@
           <img
             src="./images/fourteen.jpg"
             class="img"
+            id="13"
             alt="memorygame image"
             width="100px"
             height="100px"
@@ -197,6 +210,7 @@
           <img
             src="./images/two.jpg"
             class="img"
+            id="14"
             alt="memorygame image"
             width="100px"
             height="100px"
@@ -207,6 +221,7 @@
           <img
             src="./images/eleven.jpg"
             class="img"
+            id="15"
             alt="memorygame image"
             width="100px"
             height="100px"
@@ -217,6 +232,7 @@
           <img
             src="./images/thirteen.jpg"
             class="img"
+            id="16"
             alt="memorygame image"
             width="100px"
             height="100px"
@@ -229,11 +245,17 @@
 </html>
 <script>
   //to hide all images in onego
-  const images = document.querySelectorAll(".img");
+  var pair1=0;
+  var pair2=0;
+  function hideallimages(){
+    const images = document.querySelectorAll(".img");
   images.forEach(function (image) {
     image.style.display = "none";
   });
-  var showtime = 10;
+  }
+  hideallimages()
+  
+  var showtime = 5;
 
   var hideid;
 
@@ -246,10 +268,10 @@
         images.forEach(function (image) {
           image.style.display = "none";
         });
-        alert("over");
+       
       } else {
         showtime--;
-        console.log(showtime);
+        document.getElementById("time").textContent =showtime;
       }
     };
     hideid = setInterval(handler1, 1000);
@@ -267,11 +289,16 @@
   //when user click on start timer starts
   let start = document.getElementById("start");
   var id;
-  var time = 59;
+  var time = 64;
   var handler = function () {
     if (time < 0) {
       clearInterval(id);
+      start.innerText="..."
+  
+     
+      window.location.reload()
       alert("Game over");
+
     } else {
       document.getElementById("time").textContent = time--;
     }
@@ -281,23 +308,145 @@
     id = setInterval(handler, 1000);
     handler();
     start.disabled = true;
-    start.innerText = "Stop";
-
+    start.innerText = "...";
+   
     if (showtime >= 0) {
       showimages();
     }
     startshow();
-  });
-
-  let count = 0;
+    var count = 0;
+ var clickedid1=0;
+ var clickedid2=0;
 
   // Add a click event listener to each box
+  var clickedBoxes = [];
+  var clickedBoxes1=[]
+  console.log(clickedBoxes.length) 
   for (let i = 1; i <= 16; i++) {
     const box = document.getElementById(`box${i}`);
     box.addEventListener("click", () => {
-      count++; // Increase the count
-      document.getElementById("moves").innerText = `${count}`;
-      console.log(`Box ID: ${box.id}`);
+      
+      if (!clickedBoxes.includes(i) && clickedBoxes.length < 2) {
+        clickedBoxes.push(i);
+        showparticularimage(i);
+        count++;
+
+        if (clickedBoxes.length === 2) {
+          // Check if the two clicked boxes form a pair
+          if (checkForPair(clickedBoxes[0], clickedBoxes[1])) {
+            // Handle a matched pair (e.g., make the images visible)
+            showparticularimage(clickedBoxes[0]);
+            showparticularimage(clickedBoxes[1]);
+          alert("Great! Search one more Pair")
+            for (let i = 1; i <= 16; i++) {
+    const box = document.getElementById(`box${i}`);
+    box.addEventListener("click", () => {
+      
+      if (!clickedBoxes1.includes(i) && clickedBoxes1.length < 2) {
+        clickedBoxes1.push(i);
+        showparticularimage(i);
+        count++;
+
+        if (clickedBoxes1.length === 2) {
+          // Check if the two clicked boxes form a pair
+          if (checkForPair(clickedBoxes1[0], clickedBoxes1[1])) {
+            // Handle a matched pair (e.g., make the images visible)
+            showparticularimage(clickedBoxes1[0]);
+            showparticularimage(clickedBoxes1[1]);
+          alert("Great Job!")
+          } else {
+            // No match, so hide the boxes again after a delay
+            setTimeout(() => {
+              hideparticularimage(clickedBoxes1[0]);
+              hideparticularimage(clickedBoxes1[1]);
+              clickedBoxes1 = [];
+            }, 300); 
+          }
+        }
+      }
+
+      document.getElementById("moves").innerText = count;
     });
   }
+ 
+          
+          
+          
+          } else {
+            // No match, so hide the boxes again after a delay
+            setTimeout(() => {
+              hideparticularimage(clickedBoxes[0]);
+              hideparticularimage(clickedBoxes[1]);
+              clickedBoxes = [];
+            }, 300); 
+          }
+        }
+      }
+
+      document.getElementById("moves").innerText = count;
+    });
+  }
+  if(start.innerText=="Restart"){
+  console.log(start.innerText)
+  }
+  });  
+  console.log(clickedBoxes.length) 
+  //  if(clickedBoxes.length==2){
+  //   for (let i = 1; i <= 16; i++) {
+  //   const box = document.getElementById(`box${i}`);
+  //   box.addEventListener("click", () => {
+      
+  //     if (!clickedBoxes1.includes(i) && clickedBoxes1.length < 2) {
+  //       clickedBoxes1.push(i);
+  //       showparticularimage(i);
+  //       count++;
+
+  //       if (clickedBoxes1.length === 2) {
+  //         // Check if the two clicked boxes form a pair
+  //         if (checkForPair(clickedBoxes1[0], clickedBoxes1[1])) {
+  //           // Handle a matched pair (e.g., make the images visible)
+  //           // You can add your logic here
+  //          alert('Great Job')
+  //         } else {
+  //           // No match, so hide the boxes again after a delay
+  //           setTimeout(() => {
+  //             hideparticularimage(clickedBoxes1[0]);
+  //             hideparticularimage(clickedBoxes1[1]);
+  //             clickedBoxes1 = [];
+  //           }, 500); // Adjust the delay (in milliseconds) as needed
+  //         }
+  //       }
+  //     }
+
+  //     document.getElementById("moves").innerText = count;
+  //   });
+  // }
+ 
+  //  }
+
+ 
+  function checkForPair(id1, id2) {
+   
+     if ((id1 === 4 && id2 === 11) || (id1 === 11 && id2 === 4)) {
+      return true;
+     }
+     if ((id1 === 5 && id2 === 16) || (id1 === 16 && id2 === 5)) {
+     return true;
+   }
+    // Add more conditions as needed
+    return false; 
+  }
+
+  function showparticularimage(id) {
+    document.getElementById(`${id}`).style.display = "block";
+  }
+
+  function hideparticularimage(id) {
+    document.getElementById(`${id}`).style.display = "none";
+  }
+ 
+  if(start.innerText=="Restart"){
+  console.log(start.innerText)
+  }
+  
 </script>
