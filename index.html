@@ -69,9 +69,7 @@
             class="img"
             id="1"
             alt="memorygame image"
-            width="100px"
-            height="100px"
-            style="border-radius: 8px"
+          
           />
         </div>
         <div class="box" id="box2">
@@ -80,9 +78,7 @@
             class="img"
             id="2"
             alt="memorygame image"
-            width="100px"
-            height="100px"
-            style="border-radius: 8px"
+           
           />
         </div>
         <div class="box" id="box3">
@@ -91,9 +87,7 @@
             class="img"
             id="3"
             alt="memorygame image"
-            width="100px"
-            height="100px"
-            style="border-radius: 8px"
+           
           />
         </div>
         <div class="box" id="box4">
@@ -102,9 +96,7 @@
             class="img"
             id="4"
             alt="memorygame image"
-            width="100px"
-            height="100px"
-            style="border-radius: 8px"
+         
           />
         </div>
         <div class="box" id="box5">
@@ -113,9 +105,7 @@
             class="img"
             id="5"
             alt="memorygame image"
-            width="100px"
-            height="100px"
-            style="border-radius: 8px"
+       
           />
         </div>
         <div class="box" id="box6">
@@ -124,9 +114,7 @@
             class="img"
             id="6"
             alt="memorygame image"
-            width="100px"
-            height="100px"
-            style="border-radius: 8px"
+          
           />
         </div>
         <div class="box" id="box7">
@@ -135,9 +123,7 @@
             class="img"
             id="7"
             alt="memorygame image"
-            width="100px"
-            height="100px"
-            style="border-radius: 8px"
+         
           />
         </div>
         <div class="box" id="box8">
@@ -146,9 +132,7 @@
             class="img"
             id="8"
             alt="memorygame image"
-            width="100px"
-            height="100px"
-            style="border-radius: 8px"
+        
           />
         </div>
         <div class="box" id="box9">
@@ -157,9 +141,7 @@
             class="img"
             id="9"
             alt="memorygame image"
-            width="100px"
-            height="100px"
-            style="border-radius: 8px"
+        
           />
         </div>
         <div class="box" id="box10">
@@ -168,9 +150,7 @@
             class="img"
             id="10"
             alt="memorygame image"
-            width="100px"
-            height="100px"
-            style="border-radius: 8px"
+       
           />
         </div>
         <div class="box" id="box11">
@@ -179,9 +159,7 @@
             class="img"
             id="11"
             alt="memorygame image"
-            width="100px"
-            height="100px"
-            style="border-radius: 8px"
+          
           />
         </div>
         <div class="box" id="box12">
@@ -190,9 +168,7 @@
             class="img"
             id="12"
             alt="memorygame image"
-            width="100px"
-            height="100px"
-            style="border-radius: 8px"
+      
           />
         </div>
         <div class="box" id="box13">
@@ -201,9 +177,7 @@
             class="img"
             id="13"
             alt="memorygame image"
-            width="100px"
-            height="100px"
-            style="border-radius: 8px"
+        
           />
         </div>
         <div class="box" id="box14">
@@ -212,9 +186,7 @@
             class="img"
             id="14"
             alt="memorygame image"
-            width="100px"
-            height="100px"
-            style="border-radius: 8px"
+         
           />
         </div>
         <div class="box" id="box15">
@@ -223,9 +195,7 @@
             class="img"
             id="15"
             alt="memorygame image"
-            width="100px"
-            height="100px"
-            style="border-radius: 8px"
+          
           />
         </div>
         <div class="box" id="box16">
@@ -234,9 +204,7 @@
             class="img"
             id="16"
             alt="memorygame image"
-            width="100px"
-            height="100px"
-            style="border-radius: 8px"
+           
           />
         </div>
       </div>
@@ -297,7 +265,7 @@
   
      
       window.location.reload()
-      alert("Game over");
+      alert("You loose!");
 
     } else {
       document.getElementById("time").textContent = time--;
@@ -354,6 +322,7 @@
             showparticularimage(clickedBoxes1[0]);
             showparticularimage(clickedBoxes1[1]);
           alert("Great Job!")
+          clearInterval(id);
           } else {
             // No match, so hide the boxes again after a delay
             setTimeout(() => {
@@ -386,44 +355,9 @@
       document.getElementById("moves").innerText = count;
     });
   }
-  if(start.innerText=="Restart"){
-  console.log(start.innerText)
-  }
+
   });  
-  console.log(clickedBoxes.length) 
-  //  if(clickedBoxes.length==2){
-  //   for (let i = 1; i <= 16; i++) {
-  //   const box = document.getElementById(`box${i}`);
-  //   box.addEventListener("click", () => {
-      
-  //     if (!clickedBoxes1.includes(i) && clickedBoxes1.length < 2) {
-  //       clickedBoxes1.push(i);
-  //       showparticularimage(i);
-  //       count++;
-
-  //       if (clickedBoxes1.length === 2) {
-  //         // Check if the two clicked boxes form a pair
-  //         if (checkForPair(clickedBoxes1[0], clickedBoxes1[1])) {
-  //           // Handle a matched pair (e.g., make the images visible)
-  //           // You can add your logic here
-  //          alert('Great Job')
-  //         } else {
-  //           // No match, so hide the boxes again after a delay
-  //           setTimeout(() => {
-  //             hideparticularimage(clickedBoxes1[0]);
-  //             hideparticularimage(clickedBoxes1[1]);
-  //             clickedBoxes1 = [];
-  //           }, 500); // Adjust the delay (in milliseconds) as needed
-  //         }
-  //       }
-  //     }
-
-  //     document.getElementById("moves").innerText = count;
-  //   });
-  // }
- 
-  //  }
-
+  
  
   function checkForPair(id1, id2) {
    
